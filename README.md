@@ -3,43 +3,43 @@ import java.util.Scanner;
 
 public class LastName {
 
-	Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
         
-        public String checkYear() {
-            String academicYear = "";
+  public String checkYear() {
+  String academicYear = "";
            
-            System.out.println("Enter Academic Year: ");
+   System.out.println("Enter Academic Year: ");
             academicYear = sc.nextLine();
 
-            if ("Senior".equals(academicYear) || "Junior".equals(academicYear) || "Sophomore".equals(academicYear) || "Freshman".equals(academicYear)) {
+   if ("Senior".equals(academicYear) || "Junior".equals(academicYear) || "Sophomore".equals(academicYear) || "Freshman".equals(academicYear)) {
                 return academicYear;
-            } else {
-                System.out.println("Please enter a valid Academic Year (Senior, Junior, Sophomore, Freshmam)");
+       } else {
+               System.out.println("Please enter a valid Academic Year (Senior, Junior, Sophomore, Freshmam)");
                 academicYear = checkYear();
             }
             
             
-            return academicYear;
+   return academicYear;
         }
 
-	public double checkGPA() {
+public double checkGPA() {
             
-                //Set variable for GPA
-		double Students_GPA = 0;
+  //Set variable for GPA
+  double Students_GPA = 0;
 		
-                //Creating menu option for GPA
-                try{
-			System.out.println("Enter the Students GPA: ");
-			Students_GPA = Double.parseDouble(sc.nextLine());
+  //Creating menu option for GPA
+  try{
+	System.out.println("Enter the Students GPA: ");
+	Students_GPA = Double.parseDouble(sc.nextLine());
                         
-                        //Set filter for GPA
-                        if(Students_GPA >= 0.0 && Students_GPA <= 4.0)
-			{
-				return Students_GPA;
-			}
-			else{
-				System.out.println("Please enter Students GPA value between 0.0 to 4.0.");
-				Students_GPA = checkGPA();
+   //Set filter for GPA
+   if(Students_GPA >= 0.0 && Students_GPA <= 4.0)
+	{
+	return Students_GPA;
+	}
+	else{
+	System.out.println("Please enter Students GPA value between 0.0 to 4.0.");
+		Students_GPA = checkGPA();
 			}
 		}
 		catch (Exception e) {
@@ -49,7 +49,7 @@ public class LastName {
 		return Students_GPA;
 	}
 	
-	public void PrintMenu(Student m) {
+public void PrintMenu(Student m) {
 		try {
 			System.out.println("1. Enter the Students Name");
 			System.out.println("2. Enter the Students Academic Year");
@@ -57,12 +57,12 @@ public class LastName {
 			System.out.println("4. Display Students Info");
 			System.out.println("5. Exit");
 
-			System.out.print("Please enter which number you want to answer: ");
+System.out.print("Please enter which number you want to answer: ");
 
-			byte choice = Byte.parseByte(sc.nextLine());
+byte choice = Byte.parseByte(sc.nextLine());
                         
-                        //Creating a menu option cases
-			switch (choice) {
+  //Creating a menu option cases
+		switch (choice) {
 			case 1:
 				System.out.println("Enter Students Name: ");
 				String Students_Name = sc.nextLine();
@@ -113,14 +113,14 @@ public class LastName {
 				break;
 			}
 
-		} catch (Exception e) {
-			System.out.println("Please Enter Proper Data.Thanks.");
+} catch (Exception e) {
+		System.out.println("Please Enter Proper Data.Thanks.");
 		}
 		PrintMenu(m);
 	}
 
-	public static void main(String[] args) {
-		LastName l = new LastName();
+public static void main(String[] args) {
+	LastName l = new LastName();
 		l.PrintMenu(new Student());
 	}
 
